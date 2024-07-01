@@ -1,89 +1,33 @@
-﻿string name = "tobi";
-/*
- PascalCase => WorttrennungenWerdenGrossGeschrieben
-  camelCase => worttrennungenWerdenKleingeschrieben
-  snake_case => worttrennungen_werden_kleingeschrieben
-  kebab-case => worttrennungen-werden-kleingeschrieben
- */
+﻿Console.WriteLine("Gebe Eine Zahl ein:");
+var input = Console.ReadLine();
+// int index = int.Parse(input);
+//int input;
+/*var index = int.TryParse(Console.ReadLine(), out int input);
+Console.WriteLine(input);
+ Selbst*/
 
-/*
- DateTime ist einer von vielen komplexen Datentypen in C#.
-  DateTime ist ein Strukturtyp, der Datum und Uhrzeit darstellt.
-  Komplexe DatenTypen sind Objekte, die aus mehreren Werten bestehen, welche
-    ebenfalls komplex oder auch primitv sein können.
-   Objekte können nur in der Konsole ausgegeben werden, wenn sie eine Methode
-    ToString() haben.
- */
-DateTime date = DateTime.Now;
-Console.WriteLine(date.Year);
+bool error = int.TryParse(input, out int index);
 
-Console.WriteLine(name);
-
-
-bool is_true = false;
-// Funktionen
-// x = 5y
-
-string? test_null = null;
-Console.WriteLine("buxtehude");
-//
-// var y = Console.ReadLine();
-
-var trimmed_name = name.Trim();
-
-//Console.WriteLine(x);
-
-var test = 5.5;
-
-// implicit conversion
-Console.WriteLine((int)test + (int)test);
-
-// explicit conversion
-// int num = int.Parse(test);
-
-void PrintName()
+if (!error)
 {
-    Console.WriteLine("Hello World!");
+    Console.WriteLine(error);
 }
-/*
- * JavaScript
- function printName() {
-  console.log("Hello World!");
- }
- * Python
- def printName():
-   print("Hello World!")
- # hier gehts dann weiter
- */
-
-PrintName();
-PrintName();
-
-string GetGreeting()
+else
 {
-    return "Herzlich Willkommen!";
+    Console.WriteLine(index);
 }
 
-var greeting = GetGreeting();
+int getIndex(string promt)
+{
+    Console.WriteLine("Gebe die Aufgabe ein, DirectoryNotFoundException du bearbeiten willst:");
+    var input = Console.ReadLine();
+    var number = int.Parse(input);
+    return number;
+}
 
-Console.WriteLine(greeting);
+List<string> todos = new();
 
-// Chararrays
-var my_array = "Feierabend!";
-var my_letter = my_array[0];
+todos.Add("Wäsche waschen");
+todos.Add("Bügeln");
 
-// Collections-Basics
-// Array
-string[] namen = new string[5];
-string[] alternative_namen = ["Tobi", "Popstar", "Lehrer"]; // max 3 items
-string[] alternative_namen1 = { "Ab", "Bc", "Cd" };
-namen[0] = "Tobi";
-namen[1] = "Melanie";
-namen[2] = "Torben";
-namen[99999999999999998] = "Buxtehude!";
-Console.WriteLine(namen[0][0]);
-
-
-// Array ist eine Liste an Werten
-// Eine kontinuirliche Speicherregion, für mehrere Daten eines gewissen Types
-int[] nums = new int[5];
+//int index = getIndex("Gebe die Aufgabe ein, die du bearbeiten willst")
